@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_단순_if(걸음수)</title>
+</head>
+<body>
+    <h1>단순 if문</h1>
+
+    <script>
+    /*
+        문제) 걸음수가 20000보 이상이면 "오늘은 2만보 이상 걸으셨네요" 라고 출력되고, 
+        걸음수가 10000보 이상, 20000보 미만이면 "오늘은 1만보 이상 걸으셨네요" 라고 
+        출력되도록 코드를 작성하세요
+    */   
+
+    let num = prompt('오늘 몇 걸음 걸었나요?');
+
+    if(!num){
+        console. log(`사용자가 아무것도 입력하지 않아서 기본값을 할당함`);
+        num = 10000;
+
+        num = parseInt(num);
+
+        console. log(`num = ${num}`);
+        console. log(`typeof num = ${typeof num}`);
+
+        const rest = num;
+        if(rest === 10000){
+            document. write('오늘 10000보 이상 걸으셨네요.');
+        }
+
+        if(rest === 20000){
+            document. write('오늘 20000보 이상 걸으셨네요.');
+        }
+
+    }
+    </script>
+</body>
+</html>

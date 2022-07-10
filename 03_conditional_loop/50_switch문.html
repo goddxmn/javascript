@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>50_switch문</title>
+</head>
+<body>
+    <h1>swich()문은 다중 if문과 매우 비슷하다.</h1>
+    <pre>
+        switch(조건 비교할 변수){
+            case 비교값1 : 
+                실행할코드;
+                break;
+
+            case 비교값2 : 
+                실행할코드;
+                break;
+
+            case 비교값3 : 
+                실행할코드;
+                break;
+               
+            default : 
+                실핼할코드;
+
+        }
+    </pre>
+
+    <script>
+        const hakjum = prompt('학점을 입력하세요.(A,B,C)');
+
+        switch(hakjum){
+            case 'A':
+                document. write('당신의 점수는 90점 이상입니다.');
+                break;
+            
+            case 'B':
+                document. write('당신의 점수는 80점 이상입니다.');
+                break;
+                
+            case 'C':
+                document. write('당신의 점수는 70점 이상입니다.');
+                break;
+                
+            default :
+                document. write('재 수강 대상자.');  
+        }
+    </script>
+</body>
+</html>

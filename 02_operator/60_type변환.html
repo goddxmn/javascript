@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>60_type변환</title>
+</head>
+<body>
+    <h1>60_type변환</h1>
+    <script>
+        //string을 number type으로 변환하는 방법1
+        //const score= '100';
+        const score = Number('100');//숫자
+        //언어 입력 -> nan -> not a number 숫자가 아님
+        console. log(`score 변수의 타입은 ${typeof score} - ${score}`);
+
+        //string을 number type으로 변환하는 방법
+        const age = parseInt('40세');//정수//40까지 입력 나머지는 생략 (언어)
+        console. log(`age 변수의 타입은 ${typeof age} - ${age}`);
+
+        //string을 number type으로 변환하는 방법
+        const weight = parseFloat('75.9');//소수점까지 가능// 나머지는 생략 (언어))
+        console. log(`weight 변수의 타입은 ${typeof weight} - ${weight}`);
+
+
+    </script>
+</body>
+</html>

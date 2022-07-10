@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>50_동등연산자와_일치연산자를_이용한_비교</title>
+</head>
+<body>
+    <h1>==, ===</h1>
+
+    <script>
+        //동등,일치연산의 결과는 true, false 중 하나다.
+
+        const score1 = 100;
+        const score2 = '100';
+
+        console. log (`typeof score1 : ${typeof score1}`); //number
+        console. log (`typeof score2 : ${typeof score2}`); //string
+
+        //동등연산자 == 로 값 비교할 경우 값만 비교하므로 true
+        console.log(`score1==score2 결과는 ${score1==score2}`);//true
+
+        //일치연산자 === 로 값 비교할 경우 type까지 비교하므로 false
+        //일치연산은 조금 더 엄격한 검사 방법인 일치연산자를 권장한다.
+        console.log(`score1===score2 결과는 ${score1===score2}`);//false
+
+        console. log(`---------`);
+
+        let dulyage = 7;
+        let micole = 7;
+
+        console. log(dulyage > micole);//false
+        console. log(dulyage >= micole);//true
+        console. log(dulyage < micole);//false
+        console. log(dulyage <= micole);//true
+
+        console. log(dulyage == micole);//true
+        console. log(dulyage != micole);//false 동등 연산자의 부정
+
+
+        console. log(dulyage == micole);//true
+        console. log(dulyage !== micole);//true 일치 연산자의 부정
+    </script>
+</body>
+</html>
