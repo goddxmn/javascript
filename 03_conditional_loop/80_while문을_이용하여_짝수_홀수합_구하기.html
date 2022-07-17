@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1~100사이의 짝수,홀수 합 구하기</h1>
+    
+    <script>
+        let oddSum = 0;//홀수합
+        let evenSum = 0;//짝수합
+
+        //while문을 이용해서 값 구하기
+       let n = 1;
+       while(n<=100){
+        if(n%2 == 0){//짝수
+            evenSum += n;
+        }else{//홀수
+            oddSum += n;
+        }
+        n++;
+       }
+
+        console.log(`짝수의 합 = ${oddSum} <br />`);//2500
+        console.log(`홀수의 합 = ${evenSum}`);//2550
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>70_템플릿문자열_typeof로_타입검사</title>
+</head>
+<body>
+    <h1>템플릿문자열과 typeof</h1>
+
+    <pre>
+        JS변수의 데이터 타입
+
+        Primitive Type(원시타입,일반타입)
+            number
+            string
+            boolean
+            null
+            undefined
+            Symbol
+
+        Reference Type(참조타입) 
+            Object
+                Array 배열
+                Function 함수
+                정규표현식
+    </pre>
+
+    <script>
+        let age = 100;
+        console.log(`age 데이터타입 : ${typeof(age)}`);//number
+
+        const weight = 65.78;
+        console.log(`weight 데이터타입 : ${typeof weight}`);//number
+
+        const username = '둘리';
+        console.log(`username 데이터타입 : ${typeof(username)} 입니다`);//string
+
+        console.log('username 데이터타입 : '+typeof(username)+' 입니다');
+        console.log('username 데이터타입 :',typeof(username),'입니다');
+        console.log('username 데이터타입 : %s 입니다.',typeof(username));
+
+        const isMan = !true;//false
+        console.log(`isMan = ${isMan}`);
+        console.log(`isMan의 데이터타입 : ${typeof isMan}`);//boolean
+
+        //null - 비어있다, 지금현재 값을 알수없다
+        const nullable = null;
+        console.log(`nullable의 데이터타입 : ${typeof nullable}`);//object 로 출력이 되는데 이것은 자바스크립트 문법의 오류로 알려져 있다.
+
+        //변수를 선언만하고 아무값도 할당하지 않으면 JS가 undefined라는 값을 할당
+        //도든 type의 최하위 타입인 undefined로 설정 됨.
+        let likeNum1;
+        console.log(`likeNum1 = ${likeNum1}`);
+        console.log(`likeNum1의 데이터타입 : ${typeof(likeNum1)}`);//undefined
+
+        let likeNum2 = undefined;
+        console.log(`likeNum2 = ${likeNum2}`);
+        console.log(`likeNum2의 데이터타입 : ${typeof(likeNum2)}`);
+
+    </script>
+</body>
+</html>

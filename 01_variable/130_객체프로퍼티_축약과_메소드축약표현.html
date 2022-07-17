@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>130_객체프로퍼티_축약과_메소드축약표현</title>
+</head>
+<body>
+    <h1>객체의 축약표현</h1>
+    <script>
+        const name = '둘리';
+        const age = 7;
+
+        //위 데이터를 객체변수로 생성
+        //key와 value의 이름이 동일하면 key를 생략할 수 있다.
+        //이 때 key는 value의 이름으로 자동 생성 됨.
+        const duly = {
+            name,
+            age
+        };
+
+        console.log('duly =', duly);
+
+
+        //객체에서 메소드를 정의할 떄 function 키워드를 생략한 축약표현 가능.
+        const hong = {
+            name : '홍길동',
+            go : function(){
+                console.log(`${this.name}. 앞으로 갓~!`);
+            },
+            back (){
+                console.log(`${this.name}. 뒤로돌아 갓~!`)
+            }
+        };
+
+        hong.go();
+        hong.back();
+    </script>
+</body>
+</html>

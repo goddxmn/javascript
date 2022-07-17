@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>100_객체의_프로퍼티에_접근과_삭제하는_방법</title>
+</head>
+<body>
+    <h1>객체와 프로퍼티</h1>
+
+    <script>
+        //'구름이' , 'white' , 'small'
+        //property에 하이픈(-)이 포함되어 있으면 따옴표로 감싸야 한다.
+        const puppy = {
+            name : '구름이',
+            color : 'white',
+            headSize : 'small', 
+        };
+
+        //객체의 프로퍼티에 접근
+        console.log(puppy.name);
+        console.log(puppy.color);
+        //property에 하이픈(-)이 포함되어 있으면 대괄호[] 표기법으로 해야 함.
+        console.log(puppy.headSize);
+
+        puppy['eng-name'] = 'grumi'//동적으로 property 추가
+        console.log(puppy['eng-name']);
+
+        //객체의 property 삭제
+        delete puppy.color;
+        delete puppy.headSize;
+
+        console.log('puppy = ' , puppy);
+        
+    </script>
+</body>
+</html>

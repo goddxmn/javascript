@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>90_key와_value의_쌍으로_이루어진_리터럴객체변수</title>
+</head>
+<body>
+    <h1>객체변수 - object</h1>
+
+    <script>
+        //저장하고 싶은 데이터 - 'korea', '홍길동', 25
+        const nation = 'korea';
+        const name = '홍길동';
+        let age = 25;
+
+        //리터럴(literal)은 사람이 이해할 수 있는 문자나 약속된 기호를 사용해서 값을 생성하는 표기법
+        //리터럴(literal)방식으로 객체를 생성
+        //객체의 형태 - {key : value}, {property : value}
+        //객체변수 hong에 저장되는 값은 객체의 본체를 가리키는 주소값이다.
+        const hong = {
+            nation : 'korea',
+            name : '홍길동',
+            age : 25
+        };
+
+        //객체변수에 저장된 데이터 출력방법은 => 객체변수명.프로퍼티명
+        console.log(hong.nation);
+        console.log(hong.name);
+        console.log(hong.age);
+
+        console.log('---------------');
+
+        //who와 hong은 같은 주소값을 가지게 된다.
+        const who = hong;
+
+        //프로퍼티의 값을 재할당
+        who.nation = '미국';
+        who.name = '제임스';
+
+        console.log(who.nation);//미국
+        console.log(who.name);//제임스
+        console.log(who.age);
+
+        console.log('---------------');
+
+        console.log(hong.nation);
+        console.log(hong.name);
+        console.log(hong.age);    
+        
+        
+        //객체의 프로퍼티 추가
+        who.address = '서울시 강남구';
+
+        console.log('hong = ',hong);
+        console.log('who = ',who);
+
+    </script>

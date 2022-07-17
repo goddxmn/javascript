@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_함수의_매개변수_지역변수_전역변수_유효범위</title>
+</head>
+<body>
+    <h1>매개변수, 지역변수, 전역변수, scope</h1>
+    <script>
+                /**
+         * 문제) 현재 나의 통장잔액은 3만원이다.
+         * 저금할 금액을 전달받아 합산해서 총액을 알려주는 함수를 선언하고 호출하고 싶다.
+         * 
+         * 콘솔창에 출력 => "현재 통장잔액은 35000원 입니다."
+         * 
+         * => 코딩시 필요한 변수는?
+         *    1. 함수변수명 : saveFn
+         *    2. 총액 : totMoney
+         *    3. 입금액 : money 
+         */   
+
+        function saveFn(money){
+            let totMoney = 30000;
+            totMoney += money;
+
+            document.write(`현재 통장잔액은 ${totMoney} <br />`);
+        }
+        
+        saveFn(5000);
+        saveFn(5000);
+       
+
+        //Uncaught SyntaxError: Unexpected token '{' (at 20_함수의_매개변수_지역변수_전역변수_유효범위.html:31:20)
+        
+        //지역변수 - 함수 안에서 선언한 변수는 함수 바깥에서 사용할 수 없다.
+        //매개변수는 지역변수 개념이다.
+        //console.log{totMoney}; 출력 불가 => 지역 변수 사용으로 출력 불가 
+        //console.log(money); 출력 불가 => 매개 변수 사용으로 출력 불가
+
+        //현재 problem - 여러번 입금 시 총액이 맞지 않음 => 업그레이드(refactoring) - 개선
+
+        //전역 변수 - 함수 바깥에서 선언한 전역 변수는 함수 안에서 사용할 수 있다.
+        let sumMoney = 30000;
+
+        function bankFn(money){
+            sumMoney += money;
+            console.log(`현재 통장잔액은 ${sumMoney}원 입니다.`);
+        }
+
+        bankFn(5000);
+        bankFn(5000);
+
+        console.log(sumMoney);//출력가능
+    </script>
+</body>
+</html>

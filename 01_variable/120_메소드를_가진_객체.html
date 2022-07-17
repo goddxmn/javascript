@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>120_메소드를_가진_객체</title>
+</head>
+<body>
+    <h1>객체의 프로퍼티에 할당된 함수를 메소드라 부른다.</h1>
+
+    <script>
+        const duly ={
+            name : '아기공룡둘리',
+            age : 5,
+            address : '도봉구',
+
+            info : function(){
+                //document.write('나는 쌍문동에 사는 7살 둘리입니다.');
+                document.write(`나는 ${this.address}에 사는 ${this.age}살 ${this.name}입니다.`);
+            }
+        }
+
+        //앞에 .(점)찍고 호출하면 메소드
+        //.(점)없이 호출하면 함수
+
+        duly.info();
+    </script>
+</body>
+</html>

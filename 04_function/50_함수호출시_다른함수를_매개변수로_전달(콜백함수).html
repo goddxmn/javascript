@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>50_함수호출시_다른함수를_매개변수로_전달(콜백함수)</title>
+</head>
+<body>
+    <h1>콜백함수</h1>
+
+    <script>
+        /*
+        콜백(Callback) 함수란 무엇인가?
+
+        콜백 함수는 어떤 함수를 실행시키고 난 이후에 결과를 받을 함수 혹은, 그다음에 실행될 함수를 의미합니다. 
+        */
+
+        //콜백으로 사용할 myFn함수
+        const myFn = function(nickname){
+            console.log(`${nickname}께서 myFn 콜백함수를 호출함`);
+        };
+
+        //콜백함수를 전달받아 실행할 historyFn 함수
+        const historyFn = function(Callback){
+            Callback('이순신장군님');
+        };
+
+        historyFn(myFn);
+    </script>
+</body>
+</html>
