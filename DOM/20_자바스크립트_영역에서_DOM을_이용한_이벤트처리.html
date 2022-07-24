@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_자바스크립트_영역에서_DOM을_이용한_이벤트처리</title>
+
+    <style>
+        body{text-align: center;}
+        img{width: 90%;}
+        button{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>DOM Tree</h1>
+
+        <h2>같은 의미 다른 표현 : 태그 = 선택자 = 요소 = 엘리먼트 = 노드</h2>
+        
+        <h3>
+            브라우저는 HTML 코드를 해석해서 계층화된 Tree 형태의 DOM을 생성한다. <br>
+            DOM-Tree가 먼저 구성되어야 비로소 개발자가 DOM을 선택할 수 있다. 
+        </h3>
+
+        <p><img src="./../images/domtree.png" alt="#"></p>
+
+        <h4>
+            DOM의 역할 - JS가 HTML 소스코드에 접근하여 내용을 조작하기 위한 통로역할
+        </h4>
+
+        <button>클릭하세요!</button>
+    </div>
+
+    <script>
+        const msgFn = function(msg){
+            alert(msg);
+        };
+
+        //버튼을 클릭하면 msgFn()를 호출
+        //DOM선택.addEventListner('이벤트명', 익명 형태의 콜백함수);
+        document.querySelector('button').addEventListener('click', function(){
+            msgFn('늘 행복하세요!!');
+        });
+        
+
+    </script>
+</body>
+</html>

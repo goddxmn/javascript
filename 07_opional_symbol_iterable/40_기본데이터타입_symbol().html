@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본데이터타입_symbol()</title>
+</head>
+<body>
+    <h1>sybol()</h1>
+
+    <p>
+        ES6(2015년)부터, symbol은 number, string과 같은 기본 데이터 타입이다.
+    </p>
+
+    <script>
+        /*
+        * 1.심볼 값은 Symbol() 생성자를 호출함으로서 생성된다.
+        * 2.이때 생성되는 심볼값은 변경이 불가능한 원시값이다.
+        * 3.Symmbol()을 호출할 때 인자로 전달하는 문자열은 생설될 심볼에 대한 일종의 설명문으로, 오직 console.log() 등을 이용한 디버깅시에 각 심볼을 구분하기 위한 용도로 사용된다.
+        * 4.심볼을 사용하는 이유는 새로 추가하는 프로퍼티 키를 고유하게 설정함으로서 이미 정의되어 있는 프로퍼티와 중복을 피하기 위함이다.
+        */
+
+        //심볼변수 생성
+        const sym1 = Symbol();//sym1에는 우주에서 유일한 고유 값이 저장된다.
+        const sym2 = Symbol();
+        const sym3 = Symbol('javascript');
+        const sym4 = Symbol('javascript');
+
+        //생성된 심볼 값 비교
+        console.log(sym1 === sym2);//false
+        console.log(sym3 === sym4);//설명문이 같은거랑 상관 없이 false
+
+
+        //타입검사 typeof ??
+        console.log(typeof sym1);//Symbol
+        console.log(typeof sym2);//Symbol
+
+        
+        //심볼변수 출력
+        console.log('sym1 =', sym1);//sym1 =  Symbol()
+        console.log('sym2 =', sym2);//sym2 =  Symbol()
+        console.log('sym3 =', sym3);//sym2 =  Symbol(javascript)
+
+        const friends = {
+            duly : '아기 공룡 둘리',
+            micol : '마이콜'
+        };
+
+        //동적으로 객체의 속성 추가 시 symbol 사용예시 => 반드시 대괄호 표기법 사용!!
+        friends[sym1] = '또치';
+        friends[sym2] = '도우너';
+        friends[sym3] = '자바스크립트';
+
+        console.log(friends);
+    
+        console.log('---------------');
+
+        //Symlbol.for()를 이용해서 심볼 생성 -> 내부적으로 심볼리스트에 저장관리
+        //만약 심볼리스트에 'Samsung' 이라는 key를 갖는 심볼이 없으면 새로운 심볼을 생성
+        const s1 = Symbol.for('Samsung');
+
+        //만약 심볼리스트에 'Samsung' key를 갖는 심볼이 있으면 해당 심볼값을 반환함.
+        const s2 = Symbol.for('Samsung');
+
+        console.log(s1 === s2);//true
+    </script>
+</body>
+</html>
